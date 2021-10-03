@@ -13,9 +13,9 @@ terraform {
 
 provider "google" {
   # Configuration options
-  project = "{{YOUR GCP PROJECT}}"
-  region  = "us-central1"
-  zone    = "us-central1-c"
+  project = "brodul-argoci"
+  region  = "europe-west3"
+  zone    = "europe-west3-a"
 }
 
 
@@ -52,6 +52,12 @@ resource "google_container_node_pool" "primary_preemptible_nodes" {
     ]
   }
 }
+
+# enable GCP k8s api
+
+# terraform apply
+
+# gcloud container clusters get-credentials my-gke-cluster --region us-central1 --project brodul-argoci
 
 # kubectl create namespace argocd
 # kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
